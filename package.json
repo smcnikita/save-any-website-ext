@@ -8,8 +8,7 @@
     },
     "scripts": {
         "build": "npm run build:firefox",
-        "manifest:firefox": "rm -rf ./public/manifest.json && cp ./manifest.firefox.json ./public/manifest.json",
-        "build:firefox": "tsc -b && npm run manifest:firefox && vite build && rm -rf zip/firefox && node build.js",
+        "build:firefox": "./config/scripts/build/build.firefox.sh",
         "lint": "eslint .",
         "format": "prettier -c .",
         "format:fix": "prettier -w ."
