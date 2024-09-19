@@ -1,0 +1,11 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+#bookmarks-root {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 24px 0;
+}

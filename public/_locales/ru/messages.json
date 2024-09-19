@@ -1,0 +1,38 @@
+{
+    "appName": {
+        "message": "Simple Bookmarks"
+    },
+    "appDescription": {
+        "message": "Лёгкий способ сохранять и управлять закладками"
+    },
+    "clear_storage": {
+        "message": "Очистить хранилище"
+    },
+    "save_tab": {
+        "message": "Сохранить вкладку"
+    },
+    "title": {
+        "message": "Заголовок"
+    },
+    "favIconUrl": {
+        "message": "Иконка"
+    },
+    "open_extension_page": {
+        "message": "Открыть закладки"
+    },
+    "bookmarks": {
+        "message": "Закладки"
+    },
+    "no_bookmarks": {
+        "message": "Нет закладок"
+    },
+    "search_bookmarks": {
+        "message": "Поиск по закладкам"
+    },
+    "tag_all": {
+        "message": "все"
+    },
+    "clear_storage_tabs": {
+        "message": "Удалить все закладки"
+    }
+}

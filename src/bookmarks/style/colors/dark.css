@@ -1,0 +1,13 @@
+.dark {
+    --text-color: #f5f7f8;
+    --bg-color: #37333e;
+
+    --gray-color: #4a4a4a;
+
+    --input-color: var(--text-color);
+    --input-bg-color: #4f4a59;
+    --input-border-color: #635b72;
+
+    --danger-color: #6d1307;
+    --btn-hover-bg: var(--text-color);
+}

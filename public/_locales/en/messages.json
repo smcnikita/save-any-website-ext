@@ -1,0 +1,38 @@
+{
+    "appName": {
+        "message": "Simple Bookmarks"
+    },
+    "appDescription": {
+        "message": "Easy Bookmark Management"
+    },
+    "clear_storage": {
+        "message": "Clear storage"
+    },
+    "save_tab": {
+        "message": "Save tab"
+    },
+    "title": {
+        "message": "Title"
+    },
+    "favIconUrl": {
+        "message": "Icon"
+    },
+    "open_extension_page": {
+        "message": "Open bookmarks"
+    },
+    "bookmarks": {
+        "message": "Bookmarks"
+    },
+    "no_bookmarks": {
+        "message": "No bookmarks"
+    },
+    "search_bookmarks": {
+        "message": "Search for bookmarks"
+    },
+    "tag_all": {
+        "message": "all"
+    },
+    "clear_storage_tabs": {
+        "message": "Remove all bookmarks"
+    }
+}
