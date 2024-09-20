@@ -5,7 +5,7 @@ const TABS_STORAGE_KEY = 'tabs';
 browser.storage.local.get(TABS_STORAGE_KEY).then((res) => {
     const savedTabs = parseTabs(res.tabs);
 
-    const url = window.location.href.split('?')[0];
+    const url = window.location.href;
 
     const findTab = savedTabs.find((tab) => tab.url === url);
 

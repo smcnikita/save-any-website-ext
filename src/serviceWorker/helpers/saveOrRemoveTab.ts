@@ -9,7 +9,7 @@ type Params = {
 
 export async function saveOrRemoveTab({ currentTab, savedTabs }: Params) {
     const { title, favIconUrl, id } = currentTab;
-    const url = currentTab.url?.split('?')[0];
+    const url = currentTab.url;
 
     const findTab = savedTabs.find((tab) => tab.url === url);
     const isSave = !!findTab;
