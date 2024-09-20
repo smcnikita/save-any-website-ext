@@ -6,7 +6,7 @@
         "message": "Лёгкий способ сохранять и управлять закладками"
     },
     "clear_storage": {
-        "message": "Очистить хранилище"
+        "message": "Удалить все закладки"
     },
     "save_tab": {
         "message": "Сохранить вкладку"
@@ -46,5 +46,23 @@
     },
     "cancel_modal": {
         "message": "Отменить"
+    },
+    "settings_page": {
+        "message": "Настройки"
+    },
+    "download_tabs": {
+        "message": "Скачать сохранённые закладки"
+    },
+    "upload_tabs": {
+        "message": "Очистка хранилища и загрузка закладок из файла"
+    },
+    "upload_success": {
+        "message": "Файл загружен"
+    },
+    "tabs_deleted": {
+        "message": "Закладки удалены"
+    },
+    "tabs_download": {
+        "message": "Закладки скачаны"
     }
 }

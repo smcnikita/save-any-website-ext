@@ -1,24 +1,12 @@
-import { ClearOutlined } from '@ant-design/icons';
-import { Button, ConfigProvider } from 'antd';
+import { Button } from 'antd';
+import { SettingOutlined } from '@ant-design/icons';
 
-type Props = {
-    onClick: () => void;
-};
-
-const Actions = ({ onClick }: Props) => {
+const Actions = () => {
     return (
-        <div>
-            <ConfigProvider
-                theme={{
-                    token: {
-                        colorPrimary: '#EF5A6F',
-                    },
-                }}
-            >
-                <Button htmlType="button" onClick={onClick} icon={<ClearOutlined />}>
-                    {browser.i18n.getMessage('clear_storage')}
-                </Button>
-            </ConfigProvider>
+        <div className="flex items-center gap-3">
+            <Button htmlType="button" onClick={() => browser.runtime.openOptionsPage()} icon={<SettingOutlined />}>
+                {browser.i18n.getMessage('settings_page')}
+            </Button>
         </div>
     );
 };

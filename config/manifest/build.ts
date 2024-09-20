@@ -39,6 +39,10 @@ const manifest = () => {
                 matches: ['<all_urls>'],
             },
         ],
+        options_ui: {
+            page: 'options.html',
+            open_in_tab: false,
+        },
     };
 };
 
