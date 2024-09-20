@@ -34,5 +34,17 @@
     },
     "clear_storage_tabs": {
         "message": "Удалить все закладки"
+    },
+    "rename_tab": {
+        "message": "Переименовать"
+    },
+    "new_name": {
+        "message": "Новое название"
+    },
+    "new_title_placeholder": {
+        "message": "Введите новое название"
+    },
+    "cancel_modal": {
+        "message": "Отменить"
     }
 }

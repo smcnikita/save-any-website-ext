@@ -30,7 +30,22 @@ const useTabs = () => {
         await saveTabsToStorage(filteredTabs);
     };
 
-    return { tabs, updateTabs, loadTabsFromStorage, removeTab };
+    const renameTab = async (url: string, newTitle: string) => {
+        const newTabs = tabs.map((el) => {
+            if (el.url === url) {
+                return {
+                    ...el,
+                    title: newTitle,
+                };
+            } else {
+                return el;
+            }
+        });
+        await saveTabsToStorage(newTabs);
+        await loadTabsFromStorage();
+    };
+
+    return { tabs, updateTabs, loadTabsFromStorage, removeTab, renameTab };
 };
 
 export default useTabs;

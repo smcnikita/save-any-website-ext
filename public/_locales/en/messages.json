@@ -34,5 +34,17 @@
     },
     "clear_storage_tabs": {
         "message": "Remove all bookmarks"
+    },
+    "rename_tab": {
+        "message": "Rename"
+    },
+    "new_name": {
+        "message": "New name"
+    },
+    "new_title_placeholder": {
+        "message": "Enter a new name"
+    },
+    "cancel_modal": {
+        "message": "Cancel"
     }
 }
