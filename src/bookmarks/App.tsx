@@ -10,7 +10,7 @@ import { TABS_STORAGE_KEY } from '@const/index';
 import Actions from './components/Actions';
 
 const App = () => {
-    const { tabs, loadTabsFromStorage, removeTab, updateTabs } = useTabs();
+    const { tabs, loadTabsFromStorage, removeTab, updateTabs, renameTab } = useTabs();
     const { query, filteredTabs, changeQuery } = useSearch(tabs);
 
     const remove = () => {
@@ -34,7 +34,7 @@ const App = () => {
                 <Sidebar tabs={filteredTabs} />
 
                 <main className="w-[540px] px-6">
-                    <BookmarksList tabs={filteredTabs} onClick={removeTab} />
+                    <BookmarksList tabs={filteredTabs} onClick={removeTab} renameTab={renameTab} />
                 </main>
             </div>
         </>
