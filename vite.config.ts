@@ -1,10 +1,21 @@
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import generateFile from 'vite-plugin-generate-file';
+import manifest from './config/manifest/build';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
+    plugins: [
+        generateFile([
+            {
+                type: 'json',
+                output: './manifest.json',
+                data: manifest(),
+            },
+        ]),
+        react(),
+    ],
 
     resolve: {
         alias: {

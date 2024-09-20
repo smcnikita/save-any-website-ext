@@ -7,9 +7,9 @@
         "node": "^20"
     },
     "scripts": {
-        "dev": "web-ext run --keep-profile-changes --source-dir ./dist/",
-        "build": "npm run build:firefox",
-        "build:firefox": "./config/scripts/build/build.firefox.sh",
+        "build": "npm run build:code && npm run build:ext",
+        "build:code": "tsc -b && vite build",
+        "build:ext": "rm -rf zip && node config/build/buildExt.js",
         "lint": "eslint .",
         "format": "prettier -c .",
         "format:fix": "prettier -w ."
@@ -40,6 +40,7 @@
         "typescript": "~5.5.3",
         "typescript-eslint": "^8.0.1",
         "vite": "^5.4.1",
+        "vite-plugin-generate-file": "^0.2.0",
         "vite-plugin-web-extension": "^4.1.6",
         "web-ext": "^8.3.0",
         "webextension-polyfill": "^0.12.0"
