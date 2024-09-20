@@ -4,7 +4,7 @@ import App from './App.tsx';
 import { THEME } from '@const/index.ts';
 import { ConfigProvider, theme } from 'antd';
 
-import './style/style.css';
+import './style.css';
 
 browser.storage.local.get(THEME.STORAGE_KEY).then((res) => {
     if (
@@ -19,7 +19,7 @@ browser.storage.local.get(THEME.STORAGE_KEY).then((res) => {
 
 const windowQuery = window.matchMedia('(prefers-color-scheme:dark)');
 
-createRoot(document.getElementById('bookmarks-root')!).render(
+createRoot(document.getElementById('options-root')!).render(
     <StrictMode>
         <ConfigProvider
             theme={{

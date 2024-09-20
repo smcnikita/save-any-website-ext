@@ -6,7 +6,7 @@
         "message": "Easy Bookmark Management"
     },
     "clear_storage": {
-        "message": "Clear storage"
+        "message": "Delete all bookmarks"
     },
     "save_tab": {
         "message": "Save tab"
@@ -46,5 +46,23 @@
     },
     "cancel_modal": {
         "message": "Cancel"
+    },
+    "settings_page": {
+        "message": "Settings"
+    },
+    "download_tabs": {
+        "message": "Download saved bookmarks"
+    },
+    "upload_tabs": {
+        "message": "Clear storage and upload bookmarks from file"
+    },
+    "upload_success": {
+        "message": "File upload"
+    },
+    "tabs_deleted": {
+        "message": "Bookmarks deleted"
+    },
+    "tabs_download": {
+        "message": "Bookmarks downloaded"
     }
 }

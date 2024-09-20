@@ -6,17 +6,11 @@ import useSearch from './hooks/useSearch';
 import Search from './components/Search';
 import Sidebar from './components/Sidebar';
 import BookmarksList from './components/BookmarksList';
-import { TABS_STORAGE_KEY } from '@const/index';
 import Actions from './components/Actions';
 
 const App = () => {
-    const { tabs, loadTabsFromStorage, removeTab, updateTabs, renameTab } = useTabs();
+    const { tabs, loadTabsFromStorage, removeTab, renameTab } = useTabs();
     const { query, filteredTabs, changeQuery } = useSearch(tabs);
-
-    const remove = () => {
-        browser.storage.local.remove(TABS_STORAGE_KEY);
-        updateTabs([]);
-    };
 
     useEffect(() => {
         loadTabsFromStorage();
@@ -26,7 +20,7 @@ const App = () => {
         <>
             <h1 className="text-3xl">{browser.i18n.getMessage('bookmarks')}</h1>
 
-            <Actions onClick={remove} />
+            <Actions />
 
             <Search query={query} changeQuery={changeQuery} />
 

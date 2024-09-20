@@ -32,6 +32,7 @@ export default defineConfig({
                 bookmarks: fileURLToPath(new URL('./bookmarks.html', import.meta.url)),
                 service_worker: fileURLToPath(new URL('./src/serviceWorker/index.ts', import.meta.url)),
                 content: fileURLToPath(new URL('./scripts/content.ts', import.meta.url)),
+                options: fileURLToPath(new URL('./options.html', import.meta.url)),
             },
             output: {
                 entryFileNames: 'assets/[name].js',
