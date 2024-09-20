@@ -1,13 +1,4 @@
 :root {
-    --text-color: #1f2544;
-    --bg-color: #fff4ea;
-
-    --gray-color: #cecece;
-
-    --input-color: var(--text-color);
-    --input-bg-color: #fff4ea;
-    --input-border-color: #635b72;
-
-    --danger-color: #6d1307;
-    --btn-hover-bg: #fff4ea;
+    --b-text-color: #000;
+    --b-bg-color: #f5eded;
 }

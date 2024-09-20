@@ -5,6 +5,7 @@ import { THEME } from '@const/index.ts';
 
 import './style/reset.css';
 import './style/style.css';
+import { ConfigProvider, theme } from 'antd';
 
 browser.storage.local.get(THEME.STORAGE_KEY).then((res) => {
     if (
@@ -17,8 +18,16 @@ browser.storage.local.get(THEME.STORAGE_KEY).then((res) => {
     }
 });
 
+const windowQuery = window.matchMedia('(prefers-color-scheme:dark)');
+
 createRoot(document.getElementById('bookmarks-root')!).render(
     <StrictMode>
-        <App />
+        <ConfigProvider
+            theme={{
+                algorithm: windowQuery.matches ? theme.darkAlgorithm : theme.defaultAlgorithm,
+            }}
+        >
+            <App />
+        </ConfigProvider>
     </StrictMode>
 );

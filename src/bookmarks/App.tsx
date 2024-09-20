@@ -7,6 +7,7 @@ import Search from './components/Search';
 import Sidebar from './components/Sidebar';
 import BookmarksList from './components/BookmarksList';
 import { TABS_STORAGE_KEY } from '@const/index';
+import Actions from './components/Actions';
 
 const App = () => {
     const { tabs, loadTabsFromStorage, removeTab, updateTabs } = useTabs();
@@ -23,20 +24,16 @@ const App = () => {
 
     return (
         <>
-            <h1 className="title">{browser.i18n.getMessage('bookmarks')}</h1>
+            <h1 className="text-3xl">{browser.i18n.getMessage('bookmarks')}</h1>
 
-            <div className="clear">
-                <button className="removeBtn" type="button" onClick={remove}>
-                    {browser.i18n.getMessage('clear_storage')}
-                </button>
-            </div>
+            <Actions onClick={remove} />
 
             <Search query={query} changeQuery={changeQuery} />
 
-            <div className="wrapper">
+            <div className=" flex">
                 <Sidebar tabs={filteredTabs} />
 
-                <main className="main">
+                <main className="w-[540px] px-6">
                     <BookmarksList tabs={filteredTabs} onClick={removeTab} />
                 </main>
             </div>

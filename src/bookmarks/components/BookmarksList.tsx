@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { SavedTabData } from '@t/index';
 import BookmarkItem from './BookmarkItem';
 
@@ -12,9 +13,12 @@ const BookmarksList = ({ tabs, onClick }: Props) => {
     }
 
     return (
-        <div className="list">
+        <div className="flex flex-col gap-6">
             {tabs.map((tab, index) => (
-                <BookmarkItem key={tab.url + '_' + index} index={index} tab={tab} onClick={onClick} />
+                <Fragment key={tab.url + '_' + index}>
+                    <BookmarkItem index={index} tab={tab} onClick={onClick} />
+                    {index !== tabs.length - 1 && <div className="bg-gray-300 h-px" />}
+                </Fragment>
             ))}
         </div>
     );
