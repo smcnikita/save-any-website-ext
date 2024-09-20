@@ -1,7 +1,3 @@
-/* Fonts */
-
-@import './fonts/fonts.css';
-
 /* Colors */
 
 @import './colors/light.css';
@@ -11,26 +7,6 @@
 
 @import './base.css';
 
-/* Title */
-
-@import './title/title.css';
-
-/* Wrapper */
-
-@import './wrapper/wrapper.css';
-
-/* Sidebar */
-
-@import './sidebar/sidebar.css';
-
-/* Main */
-
-@import './main/main.css';
-
-/* Search */
-
-@import './search/search.css';
-
-/* Buttons */
-
-@import './button/removeBtn.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

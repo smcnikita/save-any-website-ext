@@ -1,3 +1,5 @@
+import { Input } from 'antd';
+
 type Props = {
     query: string;
     changeQuery: (q: string) => void;
@@ -5,9 +7,8 @@ type Props = {
 
 const Search = ({ query, changeQuery }: Props) => {
     return (
-        <div className="search">
-            <input
-                className="searchBox"
+        <div>
+            <Input
                 type="search"
                 name="search"
                 id="search"

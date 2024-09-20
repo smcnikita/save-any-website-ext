@@ -1,10 +1,12 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    color: var(--b-text-color);
+    background-color: var(--b-bg-color);
 }
 
 #bookmarks-root {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     margin: 0 auto;
     max-width: 700px;
     padding: 24px 0;
