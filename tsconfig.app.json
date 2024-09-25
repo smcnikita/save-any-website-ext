@@ -26,5 +26,5 @@
             "@const/*": ["./constants/*"]
         }
     },
-    "include": ["src", "scripts", "utils", "constants"]
+    "include": ["src", "scripts", "utils", "constants", "public/browser-polyfill.js"]
 }

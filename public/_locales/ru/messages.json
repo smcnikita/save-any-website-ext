@@ -1,12 +1,12 @@
 {
     "appName": {
-        "message": "Simple Bookmarks"
+        "message": "Save any website"
     },
     "appDescription": {
-        "message": "Лёгкий способ сохранять и управлять закладками"
+        "message": "Сохрани любой сайт в заметки"
     },
     "clear_storage": {
-        "message": "Удалить все закладки"
+        "message": "Очистить хранилище "
     },
     "save_tab": {
         "message": "Сохранить вкладку"
@@ -51,10 +51,10 @@
         "message": "Настройки"
     },
     "download_tabs": {
-        "message": "Скачать сохранённые закладки"
+        "message": "Экспорт"
     },
     "upload_tabs": {
-        "message": "Очистка хранилища и загрузка закладок из файла"
+        "message": "Импорт"
     },
     "upload_success": {
         "message": "Файл загружен"
@@ -64,5 +64,14 @@
     },
     "tabs_download": {
         "message": "Закладки скачаны"
+    },
+    "menu_input": {
+        "message": "Входящие"
+    },
+    "menu_archive": {
+        "message": "Архив"
+    },
+    "menu_all": {
+        "message": "Все"
     }
 }

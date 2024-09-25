@@ -1,5 +1,5 @@
 {
-    "name": "simple-bookmarks-firefox",
+    "name": "save-any-website-ext",
     "private": true,
     "version": "0.5.0",
     "type": "module",
@@ -7,9 +7,11 @@
         "node": "^20"
     },
     "scripts": {
-        "build": "npm run build:code && npm run build:ext",
+        "build:chrome": "cross-env BROWSER=chrome npm run build:main",
+        "build:firefox": "cross-env BROWSER=firefox npm run build:main && npm run ext:firefox",
+        "build:main": "npm run build:code",
         "build:code": "tsc -b && vite build",
-        "build:ext": "rm -rf zip && node config/build/buildExt.js",
+        "ext:firefox": "rm -rf zip && node config/build/buildExt.js",
         "lint": "eslint .",
         "format": "prettier -c .",
         "format:fix": "prettier -w ."
@@ -30,6 +32,7 @@
         "@types/webextension-polyfill": "^0.12.1",
         "@vitejs/plugin-react": "^4.3.1",
         "autoprefixer": "^10.4.20",
+        "cross-env": "^7.0.3",
         "eslint": "^9.9.0",
         "eslint-plugin-react-hooks": "^5.1.0-rc.0",
         "eslint-plugin-react-refresh": "^0.4.9",

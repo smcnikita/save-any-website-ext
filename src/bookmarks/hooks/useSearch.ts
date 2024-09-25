@@ -1,10 +1,7 @@
-import { useMemo } from 'react';
-import { useDebounceValue } from 'usehooks-ts';
+import { useState } from 'react';
 
-import type { SavedTabData } from '@t/index';
-
-const useSearch = (tabs: SavedTabData[]) => {
-    const [query, setQuery] = useDebounceValue('', 500);
+const useSearch = () => {
+    const [query, setQuery] = useState('');
 
     const changeQuery = (q: string) => {
         setQuery(q);
@@ -14,11 +11,11 @@ const useSearch = (tabs: SavedTabData[]) => {
         setQuery('');
     };
 
-    const filteredTabs = useMemo(() => {
-        return tabs.filter((tab) => tab.title?.toLowerCase().includes(query.trim().toLowerCase()));
-    }, [tabs, query]);
-
-    return { query, filteredTabs, changeQuery, clearQuery };
+    return {
+        query,
+        changeQuery,
+        clearQuery,
+    };
 };
 
 export default useSearch;

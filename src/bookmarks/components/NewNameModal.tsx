@@ -1,5 +1,6 @@
 import { Input, Modal } from 'antd';
 import { useEffect } from 'react';
+import browser from 'webextension-polyfill';
 
 type Props = {
     open: boolean;

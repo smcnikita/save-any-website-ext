@@ -27,9 +27,12 @@ export default defineConfig({
     },
 
     build: {
+        minify: true,
         rollupOptions: {
             input: {
                 bookmarks: fileURLToPath(new URL('./bookmarks.html', import.meta.url)),
+                light: fileURLToPath(new URL('./src/bookmarks/style/colors/light.css', import.meta.url)),
+                dark: fileURLToPath(new URL('./src/bookmarks/style/colors/dark.css', import.meta.url)),
                 service_worker: fileURLToPath(new URL('./src/serviceWorker/index.ts', import.meta.url)),
                 content: fileURLToPath(new URL('./scripts/content.ts', import.meta.url)),
                 options: fileURLToPath(new URL('./options.html', import.meta.url)),

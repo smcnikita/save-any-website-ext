@@ -1,8 +1,12 @@
-import { ClearOutlined, UploadOutlined } from '@ant-design/icons';
-import { Button, ConfigProvider, Upload } from 'antd';
-import { TABS_STORAGE_KEY } from '@const/index';
 import { useState } from 'react';
+import browser from 'webextension-polyfill';
+import { Button, ConfigProvider, Upload } from 'antd';
+import { ClearOutlined, DownloadOutlined, UploadOutlined } from '@ant-design/icons';
+
+import { TABS_STORAGE_KEY } from '@const/index';
+
 import Message from './components/Message';
+
 import type { UploadChangeParam } from 'antd/es/upload';
 
 const App = () => {
@@ -80,7 +84,7 @@ const App = () => {
             {/* Download Storage */}
 
             {!isDownload && (
-                <Button htmlType="button" icon={<ClearOutlined />} onClick={download}>
+                <Button htmlType="button" icon={<DownloadOutlined />} onClick={download}>
                     <a id="downloadAnchorElem" className="none" />
                     {browser.i18n.getMessage('download_tabs')}
                 </Button>

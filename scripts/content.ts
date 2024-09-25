@@ -3,7 +3,7 @@ import type { SavedTabData } from '@t/index';
 const TABS_STORAGE_KEY = 'tabs';
 
 browser.storage.local.get(TABS_STORAGE_KEY).then((res) => {
-    const savedTabs = parseTabs(res.tabs);
+    const savedTabs = parseTabs(res.tabs as string | undefined);
 
     const url = window.location.href;
 

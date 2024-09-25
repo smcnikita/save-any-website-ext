@@ -1,5 +1,8 @@
+import browser, { type Menus } from 'webextension-polyfill';
+
 import { TABS_STORAGE_KEY } from '@const/index';
-import { createContextItem } from './../helpers/createContextItem';
+
+import { createContextItem } from '../helpers/createContextItem';
 
 enum ids {
     openExtensionPage = 'openExtensionPage',
@@ -13,7 +16,7 @@ browser.runtime.onInstalled.addListener(() => {
     createContextItem(ids.clearStorageTabs, browser.i18n.getMessage('clear_storage_tabs'));
 });
 
-function genericOnClick(info: browser.contextMenus.OnClickData) {
+function genericOnClick(info: Menus.OnClickData) {
     switch (info.menuItemId) {
         case ids.openExtensionPage:
             browser.tabs.create({ url: browser.runtime.getURL('bookmarks.html') });

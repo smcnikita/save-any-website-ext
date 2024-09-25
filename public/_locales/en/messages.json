@@ -1,12 +1,12 @@
 {
     "appName": {
-        "message": "Simple Bookmarks"
+        "message": "Save any website"
     },
     "appDescription": {
-        "message": "Easy Bookmark Management"
+        "message": "Save ant website in bookmarks"
     },
     "clear_storage": {
-        "message": "Delete all bookmarks"
+        "message": "Clear storage"
     },
     "save_tab": {
         "message": "Save tab"
@@ -51,10 +51,10 @@
         "message": "Settings"
     },
     "download_tabs": {
-        "message": "Download saved bookmarks"
+        "message": "Export"
     },
     "upload_tabs": {
-        "message": "Clear storage and upload bookmarks from file"
+        "message": "Import"
     },
     "upload_success": {
         "message": "File upload"
@@ -64,5 +64,14 @@
     },
     "tabs_download": {
         "message": "Bookmarks downloaded"
+    },
+    "menu_input": {
+        "message": "Input"
+    },
+    "menu_archive": {
+        "message": "Archive"
+    },
+    "menu_all": {
+        "message": "All"
     }
 }

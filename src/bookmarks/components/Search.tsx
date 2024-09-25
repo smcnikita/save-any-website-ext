@@ -1,4 +1,5 @@
 import { Input } from 'antd';
+import browser from 'webextension-polyfill';
 
 type Props = {
     query: string;
@@ -12,7 +13,7 @@ const Search = ({ query, changeQuery }: Props) => {
                 type="search"
                 name="search"
                 id="search"
-                defaultValue={query}
+                value={query}
                 autoComplete="off"
                 placeholder={browser.i18n.getMessage('search_bookmarks')}
                 onChange={(e) => changeQuery(e.target.value)}

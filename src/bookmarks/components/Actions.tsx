@@ -1,4 +1,5 @@
 import { Button } from 'antd';
+import browser from 'webextension-polyfill';
 import { SettingOutlined } from '@ant-design/icons';
 
 const Actions = () => {

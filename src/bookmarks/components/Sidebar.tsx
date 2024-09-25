@@ -1,3 +1,5 @@
+import browser from 'webextension-polyfill';
+
 import type { SavedTabData } from '@t/index';
 
 type Props = {

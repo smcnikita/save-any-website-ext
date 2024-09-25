@@ -2,50 +2,60 @@ import { useState } from 'react';
 
 import { TABS_STORAGE_KEY } from '@const/index';
 
-import type { SavedTabData } from '@t/index';
+import type { BaseData, SavedTabData } from '@t/index';
 
-const useTabs = () => {
+type Props = {
+    getData: () => Promise<BaseData | undefined>;
+    save: (tabsToSave: SavedTabData[]) => Promise<void>;
+};
+
+const useTabs = (props: Props) => {
+    const { getData: init, save } = props;
+
     const [tabs, setTabs] = useState<SavedTabData[]>([]);
 
     const updateTabs = (newTabs: SavedTabData[]) => {
         setTabs(newTabs);
     };
 
-    const loadTabsFromStorage = async () => {
-        const storedData = await browser.storage.local.get(TABS_STORAGE_KEY);
-        if (storedData[TABS_STORAGE_KEY]) {
-            setTabs(JSON.parse(storedData[TABS_STORAGE_KEY]) as SavedTabData[]);
-        }
-    };
-
-    const saveTabsToStorage = async (tabsToSave: SavedTabData[]) => {
-        await browser.storage.local.set({
-            [TABS_STORAGE_KEY]: JSON.stringify(tabsToSave),
+    const getData = async () => {
+        await init().then((res) => {
+            if (res && res[TABS_STORAGE_KEY]) {
+                setTabs(res[TABS_STORAGE_KEY]);
+            }
         });
-        await loadTabsFromStorage();
     };
 
     const removeTab = async (url?: string, title?: string) => {
         const filteredTabs = tabs.filter((tab) => tab.url !== url && tab.title !== title);
-        await saveTabsToStorage(filteredTabs);
+        await save(filteredTabs);
     };
 
     const renameTab = async (url: string, newTitle: string) => {
         const newTabs = tabs.map((el) => {
             if (el.url === url) {
-                return {
-                    ...el,
-                    title: newTitle,
-                };
+                return { ...el, title: newTitle };
             } else {
                 return el;
             }
         });
-        await saveTabsToStorage(newTabs);
-        await loadTabsFromStorage();
+        await save(newTabs);
+        await getData();
     };
 
-    return { tabs, updateTabs, loadTabsFromStorage, removeTab, renameTab };
+    const updateRead = async (url: string, value: boolean) => {
+        const newTabs = tabs.map((el) => {
+            if (el.url === url) {
+                return { ...el, read: value };
+            } else {
+                return el;
+            }
+        });
+        await save(newTabs);
+        await getData();
+    };
+
+    return { tabs, updateTabs, removeTab, renameTab, updateRead, getData };
 };
 
 export default useTabs;

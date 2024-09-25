@@ -1,27 +1,32 @@
-import { Fragment } from 'react';
-import type { SavedTabData } from '@t/index';
+import browser from 'webextension-polyfill';
+import { List } from 'antd';
+
 import BookmarkItem from './BookmarkItem';
+
+import type { SavedTabData } from '@t/index';
 
 type Props = {
     tabs: SavedTabData[];
     onClick: (url: string | undefined, title: string | undefined) => Promise<void>;
     renameTab: (url: string, newTitle: string) => Promise<void>;
+    updateRead: (url: string, read: boolean) => Promise<void>;
 };
 
-const BookmarksList = ({ tabs, onClick, renameTab }: Props) => {
+const BookmarksList = ({ tabs, onClick, renameTab, updateRead }: Props) => {
     if (tabs.length === 0) {
         return <div>{browser.i18n.getMessage('no_bookmarks')}</div>;
     }
 
     return (
-        <div className="flex flex-col gap-6">
-            {tabs.map((tab, index) => (
-                <Fragment key={tab.url + '_' + index}>
-                    <BookmarkItem tab={tab} onClick={onClick} renameTab={renameTab} />
-                    {index !== tabs.length - 1 && <div className="bg-gray-300 h-px" />}
-                </Fragment>
-            ))}
-        </div>
+        <List
+            itemLayout="horizontal"
+            dataSource={tabs}
+            renderItem={(item) => (
+                <List.Item>
+                    <BookmarkItem tab={item} onClick={onClick} renameTab={renameTab} updateRead={updateRead} />
+                </List.Item>
+            )}
+        />
     );
 };
 

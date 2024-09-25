@@ -1,10 +1,13 @@
-import type { SavedTabData } from '@t/index';
+import browser from 'webextension-polyfill';
+
 import { deleteTabByUrl } from './deleteTabByUrl';
 import { saveTab } from './saveTab';
 
+import type { SavedTabData } from '@t/index';
+
 type Params = {
     savedTabs: SavedTabData[];
-    currentTab: browser.tabs.Tab;
+    currentTab: browser.Tabs.Tab;
 };
 
 export async function saveOrRemoveTab({ currentTab, savedTabs }: Params) {
@@ -19,5 +22,5 @@ export async function saveOrRemoveTab({ currentTab, savedTabs }: Params) {
         return;
     }
 
-    await saveTab({ title, url, favIconUrl }, savedTabs, id);
+    await saveTab({ title, url, favIconUrl, read: false }, savedTabs, id);
 }

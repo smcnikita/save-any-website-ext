@@ -1,21 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
-import { THEME } from '@const/index.ts';
 import { ConfigProvider, theme } from 'antd';
 
-import './style/style.css';
+import App from './App.tsx';
 
-browser.storage.local.get(THEME.STORAGE_KEY).then((res) => {
-    if (
-        res.theme === THEME.DARK_THEME ||
-        (!('theme' in res) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-        document.documentElement.classList.add(THEME.DARK_THEME);
-    } else {
-        document.documentElement.classList.remove(THEME.DARK_THEME);
-    }
-});
+import './style/style.css';
 
 const windowQuery = window.matchMedia('(prefers-color-scheme:dark)');
 

@@ -1,4 +1,4 @@
-.dark {
+:root {
     --b-text-color: #fff;
-    --b-bg-color: rgba(0, 0, 0, 0.84);
+    --b-bg-color: rgba(0, 0, 0, 0.9);
 }

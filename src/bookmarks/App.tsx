@@ -1,19 +1,33 @@
-import { useEffect } from 'react';
+import browser from 'webextension-polyfill';
 
+import useMenu from './hooks/useMenu';
+import useStorage from './hooks/useStorage';
 import useTabs from './hooks/useTabs';
 import useSearch from './hooks/useSearch';
+import useFilter from './hooks/useFilter';
 
 import Search from './components/Search';
-import Sidebar from './components/Sidebar';
 import BookmarksList from './components/BookmarksList';
 import Actions from './components/Actions';
+import Menu from './components/Menu';
+
+import type { MenuItemIDs } from '@t/index';
+import { useEffect } from 'react';
 
 const App = () => {
-    const { tabs, loadTabsFromStorage, removeTab, renameTab } = useTabs();
-    const { query, filteredTabs, changeQuery } = useSearch(tabs);
+    const { menuID, updateMenuID } = useMenu();
+    const { getData: init, save } = useStorage();
+    const { tabs, removeTab, renameTab, updateRead, getData } = useTabs({ getData: init, save });
+    const { query, clearQuery, changeQuery } = useSearch();
+    const { tabs: filteredTabs } = useFilter(tabs, menuID, query);
+
+    const onChangeMenuItem = (value: MenuItemIDs) => {
+        clearQuery();
+        updateMenuID(value);
+    };
 
     useEffect(() => {
-        loadTabsFromStorage();
+        getData();
     }, []);
 
     return (
@@ -21,16 +35,9 @@ const App = () => {
             <h1 className="text-3xl">{browser.i18n.getMessage('bookmarks')}</h1>
 
             <Actions />
-
+            <Menu handleChange={onChangeMenuItem} />
             <Search query={query} changeQuery={changeQuery} />
-
-            <div className=" flex">
-                <Sidebar tabs={filteredTabs} />
-
-                <main className="w-[540px] px-6">
-                    <BookmarksList tabs={filteredTabs} onClick={removeTab} renameTab={renameTab} />
-                </main>
-            </div>
+            <BookmarksList tabs={filteredTabs} onClick={removeTab} renameTab={renameTab} updateRead={updateRead} />
         </>
     );
 };
