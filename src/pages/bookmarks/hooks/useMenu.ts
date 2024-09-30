@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import type { MenuItemIDs } from '@t/index';
 
 const DEFAULT: MenuItemIDs = 'input';

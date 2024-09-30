@@ -1,8 +1,6 @@
 import browser from 'webextension-polyfill';
 import { List } from 'antd';
-
 import BookmarkItem from './BookmarkItem';
-
 import type { SavedTabData } from '@t/index';
 
 type Props = {

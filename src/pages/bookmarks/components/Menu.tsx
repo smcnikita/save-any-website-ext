@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { Segmented } from 'antd';
 import browser from 'webextension-polyfill';
-
 import type { MenuItemIDs } from '@t/index';
 
 type Props = {
@@ -15,22 +14,22 @@ type Items = {
     };
 };
 
-const Menu = ({ handleChange }: Props) => {
-    const items: Items = {
-        input: {
-            id: 'input',
-            name: browser.i18n.getMessage('menu_input'),
-        },
-        all: {
-            id: 'all',
-            name: browser.i18n.getMessage('menu_all'),
-        },
-        archive: {
-            id: 'archive',
-            name: browser.i18n.getMessage('menu_archive'),
-        },
-    };
+const items: Items = {
+    input: {
+        id: 'input',
+        name: browser.i18n.getMessage('menu_input'),
+    },
+    all: {
+        id: 'all',
+        name: browser.i18n.getMessage('menu_all'),
+    },
+    archive: {
+        id: 'archive',
+        name: browser.i18n.getMessage('menu_archive'),
+    },
+};
 
+const Menu = ({ handleChange }: Props) => {
     const onChange = (value: string) => {
         for (const key of Object.values(items)) {
             if (key.name === value) {
