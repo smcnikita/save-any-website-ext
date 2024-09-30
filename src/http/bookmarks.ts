@@ -1,5 +1,5 @@
+import browser from 'webextension-polyfill';
 import { TABS_STORAGE_KEY } from '@const/index';
-
 import type { SavedTabData } from '@t/index';
 
 type GetRes = Promise<{ [key: string]: unknown }>;

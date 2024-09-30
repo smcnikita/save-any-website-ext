@@ -7,11 +7,13 @@
         "node": "^20"
     },
     "scripts": {
-        "build:chrome": "cross-env BROWSER=chrome npm run build:main",
+        "build": "npm run build:chrome && npm run build:firefox",
+        "build:chrome": "cross-env BROWSER=chrome npm run build:main && npm run ext:chrome",
         "build:firefox": "cross-env BROWSER=firefox npm run build:main && npm run ext:firefox",
         "build:main": "npm run build:code",
         "build:code": "tsc -b && vite build",
-        "ext:firefox": "rm -rf zip && node config/build/buildExt.js",
+        "ext:firefox": "rm -rf zip/firefox && cross-env BROWSER=firefox node config/build/buildExt.js",
+        "ext:chrome": "rm -rf zip/chrome && cross-env BROWSER=chrome node config/build/buildExt.js",
         "lint": "eslint .",
         "format": "prettier -c .",
         "format:fix": "prettier -w ."
