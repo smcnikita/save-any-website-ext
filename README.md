@@ -1,10 +1,20 @@
 ![image](/public/icons/icon-fill-48.png)
 
-# Simple bookmarks
+# Save any website
 
-## Firefox Add-ons
+## Install
 
-https://addons.mozilla.org/en-US/firefox/addon/simplebookmarks
+### Firefox
+
+-   [Mozilla Addons](https://addons.mozilla.org/ru/firefox/addon/save-any-website).
+
+### Chromium
+
+1. Download ZIP file from [Releases page](https://github.com/smcnikita/save-any-website-ext/releases).
+2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
+3. Activate developer mode
+4. Reload the extension manager page to avoid errors
+5. Drag and drop folder into the extension manager
 
 ## Build
 
