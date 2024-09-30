@@ -10,6 +10,8 @@
 
 ### Chromium
 
+Export saved bookmarks when updating the version.
+
 1. Download ZIP file from [Releases page](https://github.com/smcnikita/save-any-website-ext/releases).
 2. Open your browser's extension manager, you can find it at this link: `chrome://extensions`
 3. Activate developer mode
