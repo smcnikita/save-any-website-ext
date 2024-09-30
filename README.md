@@ -29,5 +29,17 @@ npm install
 ```
 
 ```bash
+npm run build
+```
+
+#### Build only Firefox version
+
+```bash
 npm run build:firefox
+```
+
+#### Build only Chromium version
+
+```bash
+npm run build:chrome
 ```
